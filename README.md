@@ -20,7 +20,11 @@
     ```
     pip install -r requirements.txt
     ```
-3. Run the application:
+3. Create .env file and add this line:
+    ```
+    DATABASE_URL="sqlite:///name.db"
+    ```
+4. Run the application:
     ```
     python main.py
     ```
