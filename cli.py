@@ -69,10 +69,12 @@ def show_creds():
     print("\nEnter domain: ", end="")
     domain = input().strip()
     creds = fc.search(domain_name=domain)
-    if creds:
+    if creds is None:
+        print("❌ Domain not found.\n")
+    elif creds:
         print(f"\nCredentials for domain '{domain}':")
         for cred in creds:
             print(f"  ID: {cred.id} | Login: {cred.login} | Password: {cred.password}")
         print()
     else:
-        print("❌ Domain not found.\n")
+        print(f"❌ No credentials stored for '{domain}'.\n")
